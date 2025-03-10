@@ -6,7 +6,7 @@ import 'package:to_do/app/data/repository/task_repository/task_repository.dart';
 import '/app/core/base/base_remote_source.dart';
 import '/app/network/dio_provider.dart';
 
-class GithubRemoteDataSourceImpl extends BaseRemoteSource implements TaskRepository {
+class TaskRemoteDataSourceImpl extends BaseRemoteSource implements TaskRepository {
   @override
   Future<TaskResponseModel> getTaskList(TaskQueryParam queryParam) {
     var endpoint = "${DioProvider.baseUrl}/";
@@ -14,13 +14,13 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource implements TaskReposit
 
     try {
       return callApiWithErrorParser(dioCall)
-          .then((response) => _parseGithubProjectSearchResponse(response));
+          .then((response) => _parseTaskResponse(response));
     } catch (e) {
       rethrow;
     }
   }
 
-  TaskResponseModel _parseGithubProjectSearchResponse(
+  TaskResponseModel _parseTaskResponse(
       Response<dynamic> response) {
     return TaskResponseModel.fromJson(response.data);
   }
