@@ -29,7 +29,7 @@ class HomeController extends BaseController {
       pageNumber: pagingController.pageNumber,
     );
 
-    var taskResponse = _taskRepository.getTaskList(queryParam);
+    var taskResponse = _taskRepository.getTaskList(queryParam, fetchingFromLocal: true);
 
     callDataService(
       taskResponse,

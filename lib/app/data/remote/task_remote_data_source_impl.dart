@@ -8,7 +8,7 @@ import '/app/network/dio_provider.dart';
 
 class TaskRemoteDataSourceImpl extends BaseRemoteSource implements TaskRepository {
   @override
-  Future<TaskResponseModel> getTaskList(TaskQueryParam queryParam) {
+  Future<TaskResponseModel> getTaskList(TaskQueryParam queryParam, {bool fetchingFromLocal = false}) async {
     var endpoint = "${DioProvider.baseUrl}/";
     var dioCall = dioClient.get(endpoint, queryParameters: queryParam.toJson());
 
