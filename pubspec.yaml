@@ -1,0 +1,44 @@
+name: to_do
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  logger: ^2.5.0
+  flutter_screenutil: ^5.9.3
+  get: ^4.7.2
+  get_storage: ^2.1.1
+  flutter_localization: ^0.3.1
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Thin.ttf
+          weight: 200
+        - asset: fonts/Roboto-Light.ttf
+          weight: 200
+        - asset: fonts/Roboto-Regular.ttf
+          weight: 200
+        - asset: fonts/Roboto-Medium.ttf
+          weight: 300
+        - asset: fonts/Roboto-Bold.ttf
+          weight: 600
+        - asset: fonts/Roboto-Italic.ttf
+          style: italic

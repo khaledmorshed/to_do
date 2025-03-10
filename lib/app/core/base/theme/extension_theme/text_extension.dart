@@ -1,0 +1,71 @@
+import '../../../values/app_colors/all_colors_export.dart';
+import '../extend_theme/text_theme_extend.dart';
+
+//light
+const textThemeLightExtension = TextThemeExtend(
+  txtPrimaryColor: AppColors.appPrimaryColorLight,
+  txtPrimaryColorChangeable: AppColors.appPrimaryColorLight,
+  txtPrimaryColorFirst: AppColors.appPrimaryColorFirstLight,
+  txtPrimaryColorSecond: AppColors.appPrimaryColorSecondLight,
+  txtPrimaryColorThird: AppColors.appPrimaryColorThirdLight,
+  txtSecondaryColor: AppColors.appSecondaryColorLight,
+  txtSecondaryColorChangeable: AppColors.appSecondaryColorLight,
+  txtSecondaryColorFirst: AppColors.appSecondaryColorFirstLigth,
+  txtSecondaryColorSecond: AppColors.appSecondaryColorSecondLigth,
+  txtSecondaryColorThird: AppColors.appSecondaryColorThirdLight,
+
+  txtRedColor: TextColor.txtRedColor,
+  txtColorFulFirst: TextColor.txtColorfulLightFirst,
+  txtColorFulSecond: TextColor.txtColorfulLightSecond,
+  txtColorFulThird: TextColor.txtColorfulLightThird,
+  txtColorFulFourth: TextColor.txtColorfulLightFourth,
+  txtColorFulFifth: TextColor.txtColorfulLightFifth,
+  txtColorBlack: TextColor.txtColorBlackLight,
+  txtColorWhite: TextColor.txtColorWhiteLight,
+  txtBodyColorLarge: TextColor.txtBodyColorLightLarge,
+  txtBodyColorMoreMedium: TextColor.txtBodyColorLightMoreMedium,
+  txtBodyColorMedium: TextColor.txtBodyColorLightMedium,
+  txtBodyColorLessMedium: TextColor.txtBodyColorLightLessMedium,
+  txtBodyColorSmall: TextColor.txtBodyColorLightSmall,
+  txtBodyColorLessSmall: TextColor.txtBodyColorLightLessSmall,
+  txtLabelColorLarge: TextColor.txtLabelColorLightLarge,
+  txtLabelColorMoreMedium: TextColor.txtLabelColorLightMoreMedium,
+  txtLabelColorMedium: TextColor.txtLabelColorLightMedium,
+  txtLabelColorLessMedium: TextColor.txtLabelColorLightLessMedium,
+  txtLabelColorSmall: TextColor.txtLabelColorLightSmall,
+);
+
+
+//dark
+const textThemeDarkExtension = TextThemeExtend(
+  txtPrimaryColor: AppColors.appPrimaryColorDark,
+  txtPrimaryColorChangeable: AppColors.appPrimaryColorDark,
+  txtPrimaryColorFirst: AppColors.appPrimaryColorFirstDark,
+  txtPrimaryColorSecond: AppColors.appPrimaryColorSecondDark,
+  txtPrimaryColorThird: AppColors.appPrimaryColorThirdDark,
+  txtSecondaryColor: AppColors.appSecondaryColorDark,
+  txtSecondaryColorChangeable: AppColors.appSecondaryColorDark,
+  txtSecondaryColorFirst: AppColors.appSecondaryColorFirstDark,
+  txtSecondaryColorSecond: AppColors.appSecondaryColorSecondDark,
+  txtSecondaryColorThird: AppColors.appSecondaryColorThirdDark,
+
+  txtRedColor: TextColor.txtRedColor,
+  txtColorFulFirst: TextColor.txtColorfulDarkFirst,
+  txtColorFulSecond: TextColor.txtColorfulDarkSecond,
+  txtColorFulThird: TextColor.txtColorfulDarkThird,
+  txtColorFulFourth: TextColor.txtColorfulDarkFourth,
+  txtColorFulFifth: TextColor.txtColorfulDarkFifth,
+  txtColorBlack: TextColor.txtColorBlackDark,
+  txtColorWhite: TextColor.txtColorWhiteDark,
+  txtBodyColorLarge: TextColor.txtBodyColorDarkLarge,
+  txtBodyColorMoreMedium: TextColor.txtBodyColorDarkMoreMedium,
+  txtBodyColorMedium: TextColor.txtBodyColorDarkMedium,
+  txtBodyColorLessMedium: TextColor.txtBodyColorDarkLessMedium,
+  txtBodyColorSmall: TextColor.txtBodyColorDarkSmall,
+  txtBodyColorLessSmall: TextColor.txtBodyColorDarkLessSmall,
+  txtLabelColorLarge: TextColor.txtLabelColorDarkLarge,
+  txtLabelColorMoreMedium: TextColor.txtLabelColorDarkMoreMedium,
+  txtLabelColorMedium: TextColor.txtLabelColorDarkMedium,
+  txtLabelColorLessMedium: TextColor.txtLabelColorDarkLessMedium,
+  txtLabelColorSmall: TextColor.txtLabelColorDarkSmall,
+);
