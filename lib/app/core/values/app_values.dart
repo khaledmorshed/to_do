@@ -1,5 +1,6 @@
 abstract class AppValues {
   //padding
+  static const double padding = 15;
   static const double padding_16 = 16;
   static const double padding_4 = 4;
   static const double padding_2 = 2;
@@ -45,7 +46,7 @@ abstract class AppValues {
   static const double iconSize_30 = 30;
 
   //pagination
-  static const int defaultPageSize = 10;
+  static const int defaultPerPageSize = 3;
   static const int defaultPageNumber = 1;
 
   //logger

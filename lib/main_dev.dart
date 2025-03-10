@@ -10,7 +10,7 @@ import 'app/my_app.dart';
 void main()async {
 
   EnvConfig devConfig = EnvConfig(
-    appName: "Flutter GetX MVVM",
+    appName: "To-Do",
     baseUrl: "https://",
     shouldCollectCrashLog: true,
   );

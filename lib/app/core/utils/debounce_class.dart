@@ -1,15 +1,19 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class DebounceClass{
-  static VoidCallback debounce(VoidCallback action, {Duration duration = const Duration(milliseconds: 300)}) {
-    Timer? timer;
+import '../values/app_values.dart';
 
-    return () {
-      timer?.cancel();
-      timer = Timer(duration, () {
-        action();
-      });
-    };
+class DebouncerClass {
+  final int milliseconds;
+  VoidCallback? action;
+  Timer? _timer;
+
+  DebouncerClass({this.milliseconds = AppValues.defaultDebounceTimeInMilliSeconds});
+
+  run(VoidCallback action) {
+    if (_timer != null) {
+      _timer!.cancel();
+    }
+    _timer = Timer(Duration(milliseconds: milliseconds), action);
   }
 }
