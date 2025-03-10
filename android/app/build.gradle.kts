@@ -1,9 +1,46 @@
+import java.util.Properties
 plugins {
     id("com.android.application")
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
+
+fun loadPropertiesFile(fileName: String): Properties {
+    val properties = Properties()
+    val propertiesFile = rootProject.file(fileName)
+    if (propertiesFile.exists()) {
+        propertiesFile.reader().use { reader ->
+            properties.load(reader)
+        }
+    }
+    return properties
+}
+
+val localProperties = loadPropertiesFile("local.properties")
+val keystoreProperties = loadPropertiesFile("key.properties")
+val flutterRoot = localProperties.getProperty("flutter.sdk")
+val flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+val flutterVersionName = localProperties.getProperty("flutter.versionName")
+
+fun getCurrentFlavor(): String {
+    val gradle = gradle
+    val tskReqStr = gradle.startParameter.taskRequests.toString()
+
+    val pattern = when {
+        tskReqStr.contains("assemble") -> Regex("assemble(\\w+)(Release|Debug)")
+        tskReqStr.contains("bundle") -> Regex("bundle(\\w+)(Release|Debug)")
+        else -> Regex("generate(\\w+)(Release|Debug)")
+    }
+
+    val matcher = pattern.find(tskReqStr)
+
+    return matcher?.groupValues?.get(1)?.lowercase() ?: run {
+        println("NO MATCH FOUND")
+        ""
+    }
+}
+
 
 android {
     namespace = "com.example.to_do"

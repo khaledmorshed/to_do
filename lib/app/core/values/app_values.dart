@@ -63,4 +63,7 @@ abstract class AppValues {
   static const int defaultAnimationDuration = 300;
   static const double datePickerHeightOnIos = 270;
 
+  //border width
+  static const double boarderWidthVariable = 0.5;
+
 }
