@@ -1,0 +1,11 @@
+import 'package:get/get.dart';
+
+import '/app/data/local/preference/preference_manager.dart';
+import '/app/data/local/preference/preference_manager_impl.dart';
+
+class PreferenceManagerBindings implements Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PreferenceManager>(() => PreferenceManagerImpl(), fenix: true,);
+  }
+}

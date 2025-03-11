@@ -1,15 +1,15 @@
 import 'package:get/get.dart';
 import 'package:to_do/app/core/model/task_models/task_query_param.dart';
 import 'package:to_do/app/data/model/task_models/task_response_model.dart';
-import 'package:to_do/app/data/repository/task_repository/task_repository.dart';
 
+import '../../../data/repository/tasks/tasks.dart';
 import '/app/core/base/base_controller.dart';
 import '/app/core/base/paging_controller.dart';
 import '/app/modules/home/model/task_ui_model.dart';
 
 class HomeController extends BaseController {
-  final TaskRepository _taskRepository =
-      Get.find(tag: (TaskRepository).toString());
+  final Tasks _tasks =
+      Get.find(tag: (Tasks).toString());
 
   final RxList<TaskUIModel> _taskListController =
       RxList.empty();
@@ -29,7 +29,7 @@ class HomeController extends BaseController {
       pageNumber: pagingController.pageNumber,
     );
 
-    var taskResponse = _taskRepository.getTaskList(queryParam, fetchingFromLocal: true);
+    var taskResponse = _tasks.getTaskList(queryParam, fetchingFromLocal: true);
 
     callDataService(
       taskResponse,

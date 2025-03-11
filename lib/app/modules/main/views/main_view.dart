@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../create_task/views/create_task_view.dart';
 import '../../home/views/home_view.dart';
 import '/app/core/base/base_view.dart';
 import '/app/modules/main/controllers/main_controller.dart';
@@ -29,7 +30,7 @@ class MainView extends BaseView<MainController> {
   }
 
   final HomeView homeView = HomeView();
-  FavoriteView? favoriteView;
+  CreateTaskView? createTaskView;
   SettingsView? settingsView;
 
   Widget getPageOnSelectedMenu(MenuCode menuCode) {
@@ -37,8 +38,8 @@ class MainView extends BaseView<MainController> {
       case MenuCode.home:
         return homeView;
       case MenuCode.create:
-        favoriteView ??= FavoriteView();
-        return favoriteView!;
+        createTaskView ??= CreateTaskView();
+        return createTaskView!;
       case MenuCode.settings:
         settingsView ??= SettingsView();
         return settingsView!;
