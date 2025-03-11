@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 2.0,
       automaticallyImplyLeading: isBackButtonEnabled,
       actions: actions,
-      iconTheme: theme.appBarTheme.iconTheme,
+    //  iconTheme: theme.appBarTheme.iconTheme,
       title: Text(
         appBarTitleText,
         style: theme.appBarTheme.titleTextStyle,

@@ -18,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bottomNavSettings => 'Settings';
 
   @override
+  String get createTask => 'Create Task';
+
+  @override
   String get themeDark => 'ডার্ক';
 
   @override

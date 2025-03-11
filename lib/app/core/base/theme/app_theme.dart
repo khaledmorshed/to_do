@@ -46,6 +46,11 @@ class AppThemeData{
           color: AppColors.blackOnly,
         ),
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: AppColors.whiteOnly,
+        unselectedItemColor: AppColors.blackOnly,
+        selectedItemColor: AppColors.appPrimaryColorLight
+      ),
       extensions: [
         textThemeLightExtension,
         textFormFieldThemeLightExtension,
@@ -81,6 +86,11 @@ class AppThemeData{
           color: AppColors.blackOnly,
         ),
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: AppColors.blackOnly,
+          unselectedItemColor: AppColors.green400,
+          selectedItemColor: AppColors.whiteOnly
+      ),
       extensions: [
         textThemeDarkExtension,
         textFormFieldThemeDarkExtension,
@@ -109,6 +119,7 @@ class AppThemeData{
     }else if(savedTheme == AppTheme.light.name){
       return AppThemeData.lightTheme;
     }else{
+      return AppThemeData.lightTheme;
       return _getThemeSameAsSystem();
     }
   }

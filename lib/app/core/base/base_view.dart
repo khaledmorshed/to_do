@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:to_do/app/core/base/page_state.dart';
+import 'package:to_do/app/core/base/theme/get_all_theme.dart';
 import 'package:to_do/app/core/widgets/custom_circular_image_widget.dart';
 import '../../../flavors/build_config.dart';
 import '../../../l10n/app_localizations.dart';
@@ -20,6 +21,7 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
   late TextTheme _textTheme;
 
   TextTheme get textTheme => _textTheme;
+
 
   late ThemeData _theme;
 
@@ -57,8 +59,8 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
           SystemUiOverlayStyle(
             //Status bar color for android
             statusBarColor: statusBarColor(),
-            statusBarIconBrightness: Brightness.light,
-            statusBarBrightness: Brightness.light,
+            statusBarIconBrightness: Brightness.dark  ,
+            statusBarBrightness: Brightness.dark,
           ),
       child: Material(
         color: Colors.transparent,
@@ -83,8 +85,6 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
 
   Widget pageContent(BuildContext context) {
     return SafeArea(
-      top: useTopSafeArea,
-      bottom: useBottomSafeArea,
       child: GestureDetector(
         onTap: _onTapGestureDetector,
         child: body(context),
@@ -113,11 +113,11 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
   }
 
   Color pageBackgroundColor() {
-    return theme.colorScheme.background;
+    return theme.scaffoldBackgroundColor;
   }
 
   Color statusBarColor() {
-    return theme.colorScheme.background;
+    return theme.scaffoldBackgroundColor;
   }
 
   Widget? floatingActionButton() {

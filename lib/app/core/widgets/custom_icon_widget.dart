@@ -10,7 +10,7 @@ class CustomIconWidget extends StatelessWidget {
   final int themeIndex;
   final dynamic child;
   final double size;
-  final Color color;
+  final Color? color;
   final double? height;
   final double? width;
   final double? scale;
@@ -20,7 +20,7 @@ class CustomIconWidget extends StatelessWidget {
     this.themeIndex = 0,
     required this.child,
     this.size = 15,
-    this.color = Colors.black,
+    this.color,
     this.height,
     this.width,
     this.scale,
@@ -31,7 +31,7 @@ class CustomIconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorList = GetTheme().iconTheme().iconThemes;
-    final iconColor = colorList[themeIndex].color!;
+    final iconColor = color ?? colorList[themeIndex].color!;
     return child is IconData ? Icon(
       child,
       size: size,

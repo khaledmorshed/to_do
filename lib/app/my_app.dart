@@ -1,13 +1,16 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:to_do/app/core/values/app_languages.dart';
 import 'package:to_do/app/data/local/preference/preference_manager.dart';
 import 'package:to_do/app/data/local/preference/preference_manager_impl.dart';
+import 'package:to_do/app/routes/app_pages.dart';
 import 'package:to_do/flavors/build_config.dart';
 import 'package:to_do/flavors/env_config.dart';
 import '../l10n/app_localizations.dart';
+import 'bindings/initial_binding.dart';
 import 'core/base/theme/app_theme.dart';
 
 class MyApp extends StatefulWidget {
@@ -27,13 +30,22 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     _localizeApp();
-
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: _envConfig.appName,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      theme:  AppThemeData().getTheme(),
-      supportedLocales: _getSupportedLocal(),
+    return ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+      builder: ((context, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: _envConfig.appName,
+          initialRoute: AppPages.INITIAL,
+          initialBinding: InitialBinding(),
+          getPages: AppPages.routes,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          theme:  AppThemeData().getTheme(),
+          supportedLocales: _getSupportedLocal(),
+        );
+      })
     );
   }
 

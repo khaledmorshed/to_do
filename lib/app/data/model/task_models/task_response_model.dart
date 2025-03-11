@@ -16,6 +16,12 @@ class TaskResponseModel {
       });
     }
   }
+
+  @override
+  String toString() {
+    return 'TaskResponseModel{totalTasks: $totalTasks, taskList: $taskList}';
+  }
+
 }
 
 class TaskResponseData {
@@ -24,7 +30,6 @@ class TaskResponseData {
   String? startDate;
   String? endDate;
   String? status;
-  String? updatedAt;
 
   TaskResponseData({
     this.taskName = "",
@@ -32,7 +37,6 @@ class TaskResponseData {
     this.startDate = "",
     this.endDate = "",
     this.status = "",
-    this.updatedAt = "",
   });
 
   TaskResponseData.fromJson(dynamic json) {
@@ -41,7 +45,11 @@ class TaskResponseData {
     startDate = json['start_date'];
     endDate = json['end_date'];
     status = json['status'];
-    updatedAt = json['updated_at'];
+  }
+
+  @override
+  String toString() {
+    return 'TaskResponseData{taskName: $taskName, taskDescription: $taskDescription, startDate: $startDate, endDate: $endDate, status: $status}';
   }
 
 }

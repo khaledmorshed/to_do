@@ -6,7 +6,6 @@ class CreateTaskDataParam {
   String startDate;
   String endDate;
   String status;
-  String updatedAt;
 
   CreateTaskDataParam({
     this.taskName = "",
@@ -14,7 +13,6 @@ class CreateTaskDataParam {
     this.startDate = "",
     this.endDate = "",
     this.status = "Todo",
-    this.updatedAt = "",
   });
 
   Map<String, dynamic> toJson() {

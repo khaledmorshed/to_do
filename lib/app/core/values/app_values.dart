@@ -59,12 +59,12 @@ abstract class AppValues {
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
   //font
-  static const String fontFamily = "Roboto";
+  static const String fontFamily = "Poppins";
 
   static const int defaultAnimationDuration = 300;
   static const double datePickerHeightOnIos = 270;
 
   //border width
-  static const double boarderWidthVariable = 0.5;
+  static const double boarderWidthVariable = 1;
 
 }

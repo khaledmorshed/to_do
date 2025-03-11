@@ -65,6 +65,8 @@ class CustomTextFormField extends StatefulWidget {
   final Color? labelTextColor;
   final Color? textStyleColor;
   final dynamic prefixSecondWidget;
+  final int multiline;
+  final bool isShowCounterText;
 
   const CustomTextFormField({
     super.key,
@@ -124,6 +126,8 @@ class CustomTextFormField extends StatefulWidget {
     this.labelTextColor,
     this.textStyleColor,
     this.prefixSecondWidget,
+    this.multiline = 1,
+    this.isShowCounterText = false,
   });
 
   @override
@@ -141,6 +145,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     // TODO: implement initState
     suffixIcon = widget.suffixIcon;
     obscureText = widget.isPassword;
+    widget.controller?.addListener(() {
+      setState(() {});
+    });
     super.initState();
   }
 
@@ -163,113 +170,112 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     Color fillColor = widget.fillColor ??  inputDecorationTheme.fillColor!;
     Color textStyleColor = widget.textStyleColor ??  textStyle.color!;
 
-    return Center(
-      child: TextFormField(
-        inputFormatters: widget.inputFormatters,
-        readOnly: widget.isReadOnly!,
-        focusNode: widget.focusNode,
-        enabled: widget.enabled,
-        onTap: widget.onTap != null ? () => widget.onTap!() : null,
-        autovalidateMode: widget.isAutovalidateMode! ? AutovalidateMode.always : AutovalidateMode.onUserInteraction,
-        validator: widget.validation != null && !widget.onlyShowingBoarderError ? (String? txt) => widget.validation!(txt) : null,
-        controller: widget.controller,
-        obscureText: obscureText,
-        keyboardType: widget.textInputType,
-        textAlign: TextAlign.left,
-        textAlignVertical: TextAlignVertical.center,
-        onChanged: widget.onChanged != null ? (String txt) => widget.onChanged!(txt) : null,
-        onFieldSubmitted: widget.onFieldSubmit != null ? (String txt) => widget.onFieldSubmit!(txt) : null,
-        style:  myTxt14(color: textStyleColor, fontWeight: widget.fontWeight),
-        decoration: InputDecoration(
-            prefixIconConstraints: const BoxConstraints(maxHeight: 30, maxWidth: 80),
-            suffixIconConstraints: const BoxConstraints(maxHeight: 30, maxWidth: 40),
-            counterText: "",
-            isDense: false,
-            //for content padding workable it needs true
-            isCollapsed: true,
-            //isCollapsed: isContentPadding! ? true : false,
-            border: widget.isOutlineBoarder! ?  OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
-              // borderSide:BorderSide(
-              //   width: boarderWidthVariable, color: focusBoarderColor),
-            ) : InputBorder.none,
-            focusedBorder:  OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
-              borderSide:  BorderSide(
-                  width: AppValues.boarderWidthVariable, color: focusBoarderColor),
+    return TextFormField(
+      maxLines: widget.multiline,
+      inputFormatters: widget.inputFormatters,
+      readOnly: widget.isReadOnly!,
+      focusNode: widget.focusNode,
+      enabled: widget.enabled,
+      onTap: widget.onTap != null ? () => widget.onTap!() : null,
+      autovalidateMode: widget.isAutovalidateMode! ? AutovalidateMode.always : AutovalidateMode.onUserInteraction,
+      validator: widget.validation != null && !widget.onlyShowingBoarderError ? (String? txt) => widget.validation!(txt) : null,
+      controller: widget.controller,
+      obscureText: obscureText,
+      keyboardType: widget.textInputType,
+      textAlign: TextAlign.left,
+      textAlignVertical: TextAlignVertical.center,
+      onChanged: widget.onChanged != null ? (String txt) => widget.onChanged!(txt) : null,
+      onFieldSubmitted: widget.onFieldSubmit != null ? (String txt) => widget.onFieldSubmit!(txt) : null,
+      style:  myTxt14(color: textStyleColor, fontWeight: widget.fontWeight),
+      decoration: InputDecoration(
+        prefixIconConstraints: const BoxConstraints(maxHeight: 30, maxWidth: 80),
+        suffixIconConstraints: const BoxConstraints(maxHeight: 30, maxWidth: 40),
+        counterText:  !widget.isShowCounterText ? "" : "${widget.controller?.text.length ?? 0}/${widget.maxLength}",
+        isDense: false,
+          //for content padding workable it needs true
+          isCollapsed: true,
+          //isCollapsed: isContentPadding! ? true : false,
+          border: widget.isOutlineBoarder! ?  OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
+            // borderSide:BorderSide(
+            //   width: boarderWidthVariable, color: focusBoarderColor),
+          ) : InputBorder.none,
+          focusedBorder:  OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
+            borderSide:  BorderSide(
+                width: AppValues.boarderWidthVariable, color: focusBoarderColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
+            borderSide: BorderSide(
+                width:  AppValues.boarderWidthVariable, color: enableBoarderColor),
+          ),
+          errorBorder: !widget.onlyShowingBoarderError ? null : OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
+            borderSide:  BorderSide(
+              width:  AppValues.boarderWidthVariable, // Set the border width as desired
+              color: errorBoarderColor, // Set the border color for error
             ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
-              borderSide: BorderSide(
-                  width:  AppValues.boarderWidthVariable, color: enableBoarderColor),
-            ),
-            errorBorder: !widget.onlyShowingBoarderError ? null : OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(widget.boarderRadius)),
-              borderSide:  BorderSide(
-                width:  AppValues.boarderWidthVariable, // Set the border width as desired
-                color: errorBoarderColor, // Set the border color for error
+          ),
+          labelText: widget.labelText,
+          floatingLabelStyle: WidgetStateTextStyle.resolveWith(
+                (Set<WidgetState> states) {
+              final Color color = states.contains(WidgetState.error)
+                  ? Theme.of(context).colorScheme.error
+                  : floatingLabelColor;
+              return TextStyle(color: color, letterSpacing: 1.3, fontSize: 14);
+            },
+          ),
+          floatingLabelBehavior: widget.isLabelShowAlways ? FloatingLabelBehavior.always  : null,
+          labelStyle: TextStyle(fontSize: 14, color: labelTextColor),
+          contentPadding: EdgeInsets.symmetric(horizontal: widget.contentPaddingHorizontal, vertical: widget.contentPaddingVertical/*(contentPaddingVertical+extraVerticalPadding).h*/),
+          suffixIcon: widget.suffixIcon == null
+              ? null
+              : SizedBox(
+            child: InkWell(
+              onTap: (){
+                if (widget.isPassword){
+                  obscureText = !obscureText;
+                  suffixIcon = obscureText ? const Icon(Icons.visibility_off).icon :  const Icon(Icons.visibility).icon;
+                }else{
+                  if(widget.suffixIconOnTap != null){
+                    widget.suffixIconOnTap!();
+                  }
+                }
+                setState(() {
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
+                child: Icon(suffixIcon, color: suffixIconColor, size: widget.suffixIconSize.r, ),
               ),
             ),
-            labelText: widget.labelText,
-            floatingLabelStyle: WidgetStateTextStyle.resolveWith(
-                  (Set<WidgetState> states) {
-                final Color color = states.contains(WidgetState.error)
-                    ? Theme.of(context).colorScheme.error
-                    : floatingLabelColor;
-                return TextStyle(color: color, letterSpacing: 1.3, fontSize: 14);
-              },
-            ),
-            floatingLabelBehavior: widget.isLabelShowAlways ? FloatingLabelBehavior.always  : null,
-            labelStyle: TextStyle(fontSize: 14, color: labelTextColor),
-            contentPadding: EdgeInsets.symmetric(horizontal: widget.contentPaddingHorizontal, vertical: widget.contentPaddingVertical/*(contentPaddingVertical+extraVerticalPadding).h*/),
-            suffixIcon: widget.suffixIcon == null
-                ? null
-                : SizedBox(
-              child: InkWell(
-                onTap: (){
-                  if (widget.isPassword){
-                    obscureText = !obscureText;
-                    suffixIcon = obscureText ? const Icon(Icons.visibility_off).icon :  const Icon(Icons.visibility).icon;
-                  }else{
-                    if(widget.suffixIconOnTap != null){
-                      widget.suffixIconOnTap!();
-                    }
-                  }
-                  setState(() {
-                  });
-                },
+          ),
+          prefixIcon: widget.isPhoneNumber ? Container(
+            margin: const EdgeInsets.only(top: 0),
+            width: 40.w,
+            child:  const Center(child: Text("+88", style: TextStyle(fontSize: 14),),),
+          )
+              : widget.prefixIcon == null
+              ? null
+              : Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0, right: 8),
-                  child: Icon(suffixIcon, color: suffixIconColor, size: widget.suffixIconSize.r, ),
+                  child: Icon(widget.prefixIcon, color: prefixIconColor, size: 22.r, ),
                 ),
               ),
-            ),
-            prefixIcon: widget.isPhoneNumber ? Container(
-              margin: const EdgeInsets.only(top: 0),
-              width: 40.w,
-              child:  const Center(child: Text("+88", style: TextStyle(fontSize: 14),),),
-            )
-                : widget.prefixIcon == null
-                ? null
-                : Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8),
-                    child: Icon(widget.prefixIcon, color: prefixIconColor, size: 22.r, ),
-                  ),
-                ),
-                if(widget.prefixSecondWidget != null)widget.prefixSecondWidget,
-              ],
-            ),
-            hintText: widget.hintText,
-           // hintStyle:  TextStyle(fontSize: 13, color: hintColor, fontWeight: FontWeight.normal, ),
-            hintStyle:  TextStyle(fontSize: 14, color: labelTextColor),
-            filled: widget.isFilled,
-            fillColor: fillColor,
-        ),
+              if(widget.prefixSecondWidget != null)widget.prefixSecondWidget,
+            ],
+          ),
+          hintText: widget.hintText,
+         // hintStyle:  TextStyle(fontSize: 13, color: hintColor, fontWeight: FontWeight.normal, ),
+          hintStyle:  TextStyle(fontSize: 14, color: labelTextColor),
+          filled: widget.isFilled,
+          fillColor: fillColor,
       ),
     );
   }

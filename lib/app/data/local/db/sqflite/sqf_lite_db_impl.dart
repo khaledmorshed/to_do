@@ -106,6 +106,55 @@ class SqfLitDbImpl implements SqfLitDbBase {
   }
 
   @override
+  Future<dynamic> getTaskData({
+    required dynamic queryParam,
+    String databaseName = "task_db",
+    String tableName = "",
+  }) async {
+    try {
+      var databasesPath = await getDatabasesPath();
+      String path = join(databasesPath, databaseName);
+      bool doesDatabaseExist = await databaseExists(path);
+      if (!doesDatabaseExist) return {};
+
+      final db = await initDb(databaseName: databaseName);
+      String query = "SELECT * FROM ${tableName} WHERE 1=1";
+
+      // // Apply dynamic filters to the query
+      // if (queryParam['filters'] != null) {
+      //   Map<String, dynamic> filters = queryParam['filters'];
+      //   filters.forEach((key, value) {
+      //     query += " AND $key = '$value'";
+      //     query += " AND $key = '$value'";
+      //   });
+      // }
+
+      // Pagination
+      int offset = (queryParam['pageNumber'] - 1) * queryParam['perPage'];
+      query += " LIMIT ${queryParam['perPage']} OFFSET $offset";
+
+      // Execute the query
+      List<Map<String, dynamic>> result = await db.rawQuery(query);
+
+      // Count total tasks (without pagination) for pagination info
+      var countResult = await db.rawQuery("SELECT COUNT(*) AS total FROM ${tableName} WHERE 1=1");
+      int totalTasks = countResult.isNotEmpty ? (countResult.first['total'] as int?) ?? 0 : 0;
+
+      // Return dynamic response (you could return a map or structured model)
+      return {
+        'total_tasks': totalTasks,
+        'task_list': result, // Result can be dynamic
+      };
+    } catch (err) {
+      print("Error fetching data: $err");
+      return {
+        'totalTasks': 0,
+        'taskList': [],
+      };
+    }
+  }
+
+  @override
   Future<void> deleteDatabaseFile({String databaseName = "task_db"}) async {
     final rootPath = await getDatabasesPath();
     final dbPath = join(rootPath, databaseName);

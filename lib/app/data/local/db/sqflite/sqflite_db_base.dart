@@ -19,6 +19,12 @@ abstract class SqfLitDbBase {
     String databaseName = "task_db"
   });
 
+  Future<dynamic> getTaskData({
+    required dynamic queryParam,
+    String databaseName = "task_db",
+    String tableName = "",
+  });
+
   Future<dynamic> createDatabaseAndInsertDataInTable({
     required String tableName,
     required String createTableInformation,

@@ -14,7 +14,7 @@ abstract class Routes {
 abstract class _Paths {
   static const MAIN = '/main';
   static const HOME = '/home';
-  static const CREATETASK = '/createTask';
+  static const CREATETASK = '/createtask';
   static const SETTINGS = '/settings';
   static const SPLASHVIEW = '/splashView';
 }

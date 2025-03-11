@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   ///primary and secondary color shade light
-  static const Color scaffoldBackGroundColorLight = Color(0xfff5f8f6);
-  static const Color appPrimaryColorLight = Color(0xff28a745);
+  static const Color scaffoldBackGroundColorLight = Color(0xffffffff);
+  static const Color appPrimaryColorLight = Color(0xff613BE7);
   static const Color appPrimaryColorFirstLight = Color(0xff17b855);
   static const Color appPrimaryColorSecondLight = Color(0xff1f7dcf);
   static const Color appPrimaryColorThirdLight = Color(0xff3b9cf1);

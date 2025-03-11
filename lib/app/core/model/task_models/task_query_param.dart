@@ -14,8 +14,8 @@ class TaskQueryParam {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['status'] = searchKeyWord;
-    data['per_page'] = perPage;
-    data['page'] = pageNumber;
+    data['perPage'] = perPage;
+    data['pageNumber'] = pageNumber;
 
     return data;
   }

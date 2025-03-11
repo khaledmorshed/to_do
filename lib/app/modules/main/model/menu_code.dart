@@ -9,18 +9,18 @@ extension MenuCodeExtensions on MenuCode {
       case MenuCode.home:
         return BottomNavItem(
           navTitle: appLocalization.bottomNavHome,
-          iconSvgName: "ic_home.svg",
+          iconSvgName: "images/png/home.png",
           menuCode: MenuCode.home,
         );
       case MenuCode.create:
         return BottomNavItem(
-            navTitle: appLocalization.bottomNavFavorite,
-            iconSvgName: "ic_favorite.svg",
+            navTitle: appLocalization.createTask,
+            iconSvgName: "images/png/create_task.png",
             menuCode: MenuCode.create);
       case MenuCode.settings:
         return BottomNavItem(
             navTitle: appLocalization.bottomNavSettings,
-            iconSvgName: "ic_settings.svg",
+            iconSvgName: "images/png/calendar.png",
             menuCode: MenuCode.settings);
     }
   }

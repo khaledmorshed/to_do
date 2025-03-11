@@ -113,6 +113,12 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get bottomNavSettings;
 
+  /// No description provided for @createTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Task'**
+  String get createTask;
+
   /// No description provided for @themeDark.
   ///
   /// In en, this message translates to:

@@ -30,19 +30,19 @@ class MainView extends BaseView<MainController> {
   }
 
   final HomeView homeView = HomeView();
-  CreateTaskView? createTaskView;
-  SettingsView? settingsView;
+   CreateTaskView? createTaskView;
+   SettingsView? settingsView;
 
   Widget getPageOnSelectedMenu(MenuCode menuCode) {
     switch (menuCode) {
       case MenuCode.home:
         return homeView;
-      case MenuCode.create:
-        createTaskView ??= CreateTaskView();
-        return createTaskView!;
       case MenuCode.settings:
         settingsView ??= SettingsView();
         return settingsView!;
+      case MenuCode.create:
+        createTaskView ??= CreateTaskView();
+        return createTaskView!;
       default:
         return homeView;
     }

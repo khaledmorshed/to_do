@@ -14,4 +14,9 @@ class TaskUIModel {
     this.status = "",
     this.updatedAt = "",
   });
+
+  @override
+  String toString() {
+    return 'TaskUIModel{taskName: $taskName, taskDescription: $taskDescription, startDate: $startDate, endDate: $endDate, status: $status, updatedAt: $updatedAt}';
+  }
 }

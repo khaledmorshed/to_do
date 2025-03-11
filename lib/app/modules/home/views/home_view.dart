@@ -20,31 +20,32 @@ class HomeView extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-    return PagingView(
-      onRefresh: () async {
-        controller.onRefreshPage();
-      },
-      onLoadNextPage: () {
-        controller.onLoadNextPage();
-      },
-      child: Padding(
-        padding:  EdgeInsets.all(AppValues.padding),
-        child: Obx(
-          () => ListView.separated(
-            shrinkWrap: true,
-            itemCount: controller.taskList.length,
-            primary: false,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              var model = controller.taskList[index];
-
-              return Container();
-            },
-            separatorBuilder: (BuildContext context, int index) =>
-                 SizedBox(height: AppValues.padding_4),
-          ),
-        ),
-      ),
-    );
+    return Container();
+    // return PagingView(
+    //   onRefresh: () async {
+    //     controller.onRefreshPage();
+    //   },
+    //   onLoadNextPage: () {
+    //     controller.onLoadNextPage();
+    //   },
+    //   child: Padding(
+    //     padding:  EdgeInsets.all(AppValues.padding),
+    //     child: Obx(
+    //       () => ListView.separated(
+    //         shrinkWrap: true,
+    //         itemCount: controller.taskList.length,
+    //         primary: false,
+    //         physics: const NeverScrollableScrollPhysics(),
+    //         itemBuilder: (context, index) {
+    //           var model = controller.taskList[index];
+    //
+    //           return Container();
+    //         },
+    //         separatorBuilder: (BuildContext context, int index) =>
+    //              SizedBox(height: AppValues.padding_4),
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }

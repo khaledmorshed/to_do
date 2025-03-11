@@ -20,13 +20,16 @@ class HomeController extends BaseController {
   final pagingController = PagingController<TaskUIModel>();
 
   void getTaskList() {
+    print("test..........1");
     if (!pagingController.canLoadNextPage()) return;
+    print("test..........2");
 
     pagingController.isLoadingPage = true;
 
     var queryParam = TaskQueryParam(
       searchKeyWord: '',
       pageNumber: pagingController.pageNumber,
+      perPage: 5
     );
 
     var taskResponse = _tasks.getTaskList(queryParam, fetchingFromLocal: true);
@@ -51,6 +54,7 @@ class HomeController extends BaseController {
   }
 
   void _handleTaskListResponseSuccess(TaskResponseModel response) {
+    print("resposne.....${response.toString()}");
     List<TaskUIModel>? taskList = response.taskList
         ?.map((e) => TaskUIModel(
               taskName: e.taskName ?? "",
@@ -58,7 +62,7 @@ class HomeController extends BaseController {
               startDate: e.startDate ?? "" ,
               endDate: e.endDate ?? "" ,
               status: e.status ?? "" ,
-              updatedAt: e.updatedAt ?? "" ,
+
             ))
         .toList();
 
@@ -71,6 +75,7 @@ class HomeController extends BaseController {
     var newList = [...pagingController.itemList];
 
     _taskListController(newList);
+    print("taskList...${taskList}");
   }
 
   bool _isLastPage(int newListItemCount, int totalCount) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:to_do/app/core/values/app_colors/all_colors_export.dart';
 import 'package:to_do/app/core/widgets/custom_icon_widget.dart';
 
 import '../../../core/base/base_widget_mixin.dart';
@@ -59,12 +60,15 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
   ) {
     return BottomNavigationBarItem(
       icon: CustomIconWidget(
+        themeIndex: 0,
         child: navItem.iconSvgName,
         height: AppValues.iconDefaultSize,
         width: AppValues.iconDefaultSize,
+       // color: isSelected ? AppColors.appp : Colors.black
         color: isSelected
-            ? theme.bottomNavigationBarTheme.selectedItemColor!
-            : theme.bottomNavigationBarTheme.unselectedItemColor!,
+            ? theme.bottomNavigationBarTheme.selectedItemColor
+            : theme.bottomNavigationBarTheme.unselectedItemColor,
+
       ),
       label: navItem.navTitle,
       tooltip: navItem.navTitle,

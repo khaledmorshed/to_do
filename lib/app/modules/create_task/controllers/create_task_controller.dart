@@ -30,6 +30,8 @@ class CreateTaskController extends BaseController {
       status: "Todo"
     );
 
+    print("dataP....${dataParam}");
+
     var createTaskResponse = _tasks.createTask(dataParam, storeDataInLocal: true);
 
     callDataService(
@@ -41,7 +43,8 @@ class CreateTaskController extends BaseController {
   }
 
   void _handleCreateTaskResponseSuccess(dynamic response) {
-    isTaskCreate = response;
+    print("response...${response}");
+    isTaskCreate = response.obs;
   }
 
 }
