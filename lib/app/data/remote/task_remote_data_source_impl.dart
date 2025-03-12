@@ -24,7 +24,9 @@ class TaskRemoteDataSourceImpl extends BaseRemoteSource implements Tasks {
     if (fetchingFromLocal) {
       try {
          final database = databaseHelper.databaseName;
-         var taskResponse = await databaseHelper.getTaskData(queryParam: queryParam.toJson(), tableName: TableInfo.taskList);;
+         print("queryParam.toJson()..${queryParam.toJson()}");
+         var taskResponse = await databaseHelper.getTaskData(queryParam: queryParam.toJson(), tableName: TableInfo.taskList);
+         print("taskResponse..${taskResponse}");
          if (taskResponse.isNotEmpty) {
            Map<String, dynamic> data = taskResponse is String
                ? jsonDecode(taskResponse)

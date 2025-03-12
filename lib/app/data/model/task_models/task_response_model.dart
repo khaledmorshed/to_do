@@ -25,6 +25,7 @@ class TaskResponseModel {
 }
 
 class TaskResponseData {
+  String? id;
   String? taskName;
   String? taskDescription;
   String? startDate;
@@ -32,6 +33,7 @@ class TaskResponseData {
   String? status;
 
   TaskResponseData({
+    this.id = "",
     this.taskName = "",
     this.taskDescription = "",
     this.startDate = "",
@@ -40,6 +42,7 @@ class TaskResponseData {
   });
 
   TaskResponseData.fromJson(dynamic json) {
+    id = json['id'].toString();
     taskName = json['task_name'];
     taskDescription = json['task_description'];
     startDate = json['start_date'];
@@ -49,7 +52,7 @@ class TaskResponseData {
 
   @override
   String toString() {
-    return 'TaskResponseData{taskName: $taskName, taskDescription: $taskDescription, startDate: $startDate, endDate: $endDate, status: $status}';
+    return 'TaskResponseData{id: $id, taskName: $taskName, taskDescription: $taskDescription, startDate: $startDate, endDate: $endDate, status: $status}';
   }
 
 }

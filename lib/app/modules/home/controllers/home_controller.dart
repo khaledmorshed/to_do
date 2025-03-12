@@ -11,25 +11,25 @@ class HomeController extends BaseController {
   final Tasks _tasks =
       Get.find(tag: (Tasks).toString());
 
-  final RxList<TaskUIModel> _taskListController =
-      RxList.empty();
+  final RxList<TaskUIModel> _taskListController = RxList.empty();
+
+  DateTime dateTime = DateTime.now();
+  var selectedButton = 0.obs;
 
   List<TaskUIModel> get taskList =>
       _taskListController.toList();
 
   final pagingController = PagingController<TaskUIModel>();
 
-  void getTaskList() {
-    print("test..........1");
-    if (!pagingController.canLoadNextPage()) return;
-    print("test..........2");
+  void getTaskList({bool withoutPagination = false}) {
+    if (!pagingController.canLoadNextPage() && !withoutPagination) return;
+    if(withoutPagination) pagingController.pageNumber = 1;
 
     pagingController.isLoadingPage = true;
-
     var queryParam = TaskQueryParam(
       searchKeyWord: '',
       pageNumber: pagingController.pageNumber,
-      perPage: 5
+      perPage: 6
     );
 
     var taskResponse = _tasks.getTaskList(queryParam, fetchingFromLocal: true);
@@ -49,12 +49,11 @@ class HomeController extends BaseController {
 
   onLoadNextPage() {
     logger.i("On load next");
-
     getTaskList();
   }
 
   void _handleTaskListResponseSuccess(TaskResponseModel response) {
-    print("resposne.....${response.toString()}");
+   // print("reponse..${response}");
     List<TaskUIModel>? taskList = response.taskList
         ?.map((e) => TaskUIModel(
               taskName: e.taskName ?? "",
@@ -72,13 +71,23 @@ class HomeController extends BaseController {
       pagingController.appendPage(taskList);
     }
 
+    //temporary pagination
+    //pagingController.appendPage(taskList!);
+
     var newList = [...pagingController.itemList];
 
     _taskListController(newList);
-    print("taskList...${taskList}");
   }
 
   bool _isLastPage(int newListItemCount, int totalCount) {
     return (taskList.length + newListItemCount) >= totalCount;
   }
+  @override
+  void onReady() {
+    super.onReady();
+   // getTaskList();  // Fetch tasks whenever HomeController is active
+  }
+
+
+
 }

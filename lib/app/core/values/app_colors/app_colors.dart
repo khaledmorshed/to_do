@@ -7,11 +7,11 @@ abstract class AppColors {
   static const Color appPrimaryColorLight = Color(0xff613BE7);
   static const Color appPrimaryColorFirstLight = Color(0xff17b855);
   static const Color appPrimaryColorSecondLight = Color(0xff1f7dcf);
-  static const Color appPrimaryColorThirdLight = Color(0xff3b9cf1);
-  static const Color appSecondaryColorLight = Color(0xff001f3f);
+  static const Color appPrimaryColorThirdLight = Color(0xffF0EDFD);
+  static const Color appSecondaryColorLight = Color(0xff009F76);
   static const Color appSecondaryColorFirstLigth = Color(0xff0e2740);
   static const Color appSecondaryColorSecondLigth = Color(0xff22384e);
-  static const Color appSecondaryColorThirdLight = Color(0xff415263);
+  static const Color appSecondaryColorThirdLight = Color(0xffEEFFE0);
   static const Color appSecondaryColorFourthLight = Color(0xff858687);
 
   ///primary and secondary color shade dark

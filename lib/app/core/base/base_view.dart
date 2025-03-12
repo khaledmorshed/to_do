@@ -6,6 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:to_do/app/core/base/page_state.dart';
 import 'package:to_do/app/core/base/theme/get_all_theme.dart';
 import 'package:to_do/app/core/widgets/custom_circular_image_widget.dart';
+import 'package:to_do/app/core/widgets/custom_circular_progress_indicator.dart';
 import '../../../flavors/build_config.dart';
 import '../../../l10n/app_localizations.dart';
 import 'base_controller.dart';
@@ -133,7 +134,7 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
   }
 
   Widget _showLoading() {
-    return CustomCircularImageWidget();
+    return CustomCircularProgressIndicator();
   }
 
   Widget? _bottomSheet() {

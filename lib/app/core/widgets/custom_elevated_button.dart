@@ -19,6 +19,7 @@ class CustomElevatedButton extends StatelessWidget {
   final Color? backgroundColor;
   final dynamic textWidget;
   final VoidCallback? onPressed;
+  final double elevation;
 
   const CustomElevatedButton({
     super.key,
@@ -34,6 +35,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.textWidget,
     this.onPressed,
     this.backgroundColor,
+    this.elevation = 0,
   });
 
   @override
@@ -57,6 +59,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed != null ? () => onPressed!() : null,
         style: buttonStyle.copyWith(
+          elevation: WidgetStateProperty.all<double>(elevation),
           backgroundColor: WidgetStateProperty.resolveWith<Color>(
                 (Set<WidgetState> states) {
               if (states.contains(WidgetState.disabled)) {

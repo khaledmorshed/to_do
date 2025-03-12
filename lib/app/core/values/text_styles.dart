@@ -18,6 +18,11 @@ myTxtCustom({
 }
 
 /// For Extra Large Size
+myTxt20({Color? color, FontWeight? fontWeight, FontStyle fonStyle = FontStyle.normal, double? height}){
+  return TextStyle(fontFamily: AppValues.fontFamily, height: height,  fontSize: 20.sp, color: color, fontWeight: fontWeight ?? FontWeight.w800,);
+}
+
+/// For Extra Large Size
 myTxt18({Color? color, FontWeight? fontWeight, FontStyle fonStyle = FontStyle.normal, double? height}){
   return TextStyle(fontFamily: AppValues.fontFamily, height: height,  fontSize: 18.sp, color: color, fontWeight: fontWeight ?? FontWeight.w800,);
 }

@@ -25,7 +25,7 @@ final containerThemeLightExtension = ContainerThemeExtend(
     [AppColors.whiteOnly, AppColors.grey400, Color(0xff000000)],
 
     //background, boarder(grey, grey)--9
-    [Colors.grey, Colors.grey, Colors.grey],
+    [AppColors.whiteOnly, TextFormFieldColor.textFieldEnableBoarderColorLightFirst, AppColors.whiteOnly],//
     //background, boarder(white, none)--10
     [AppColors.whiteOnly, Color(0xff008080), Color(0xff000000)],
     //background, boarder(white, none)--11

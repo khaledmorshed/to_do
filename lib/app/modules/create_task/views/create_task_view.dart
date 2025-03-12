@@ -7,6 +7,7 @@ import 'package:to_do/app/core/values/text_styles.dart';
 import 'package:to_do/app/core/widgets/custom_elevated_button.dart';
 import 'package:to_do/app/core/widgets/custom_text_form_field.dart';
 import 'package:to_do/app/modules/create_task/controllers/create_task_controller.dart';
+import '../../../core/base/paging_controller.dart';
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/widgets/paging_view.dart';
 import '/app/core/base/base_view.dart';
@@ -44,10 +45,10 @@ class CreateTaskView extends BaseView<CreateTaskController> {
               controller: controller.taskDescriptionController,
               boarderRadius: 20,
               multiline: 5,
-              maxLength: 45,
+              maxLength: 100,
               isShowCounterText: true,
               inputFormatters: [
-                LengthLimitingTextInputFormatter(45),
+                LengthLimitingTextInputFormatter(100),
               ],
             ),
             szH32(),
@@ -59,6 +60,8 @@ class CreateTaskView extends BaseView<CreateTaskController> {
               textWidget: "Create New Task",
               onPressed: (){
                 controller.createTask();
+                PagingController.endOfList = false;
+                controller.update();
               },
             ),
           ],

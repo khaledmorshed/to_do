@@ -113,4 +113,25 @@ abstract class BaseController extends GetxController{
     super.onClose();
   }
 
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
+
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+  }
+
+  @override
+  // TODO: implement onStart
+  InternalFinalCallback<void> get onStart => super.onStart;
+
+  @override
+  void $configureLifeCycle() {
+    // TODO: implement $configureLifeCycle
+    super.$configureLifeCycle();
+  }
 }

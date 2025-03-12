@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/app/core/base/theme/get_all_theme.dart';
 import 'package:to_do/app/core/values/app_colors/all_colors_export.dart';
 import '../extend_theme/elevated_button_theme_extend.dart';
 import '../extend_theme/text_button_theme_extend.dart';
@@ -49,15 +50,15 @@ final elevatedButtonThemeLightExtension = ElevatedButtonThemeExtend(
     ),
     //blue ---3
     ElevatedButton.styleFrom(
-      backgroundColor: ButtonColor.buttonColorLightSecond,
-      side: const BorderSide(color: ButtonColor.buttonColorLightSecond,),
-      textStyle: const TextStyle(
-        color: AppColors.whiteOnly,
+      backgroundColor: AppColors.whiteOnly,
+      side: const BorderSide(color: AppColors.whiteOnly,),
+      textStyle:  TextStyle(
+        color: TextColor.txtLabelColorLightMedium,
       ),
       shape: const RoundedRectangleBorder(
-        side: BorderSide(color: ButtonColor.buttonColorLightSecond, width: 0),
+        side: BorderSide(color: AppColors.whiteOnly, width: 0),
       ),
-      shadowColor: ButtonColor.buttonColorLightSecond,
+      shadowColor: AppColors.whiteOnly,
     ),
   ],
 );
@@ -105,14 +106,15 @@ final elevatedButtonThemeDarkExtension = ElevatedButtonThemeExtend(
     ),
     //----3
     ElevatedButton.styleFrom(
-      backgroundColor: ButtonColor.buttonColorDarkSecond,
-      side: const BorderSide(color: ButtonColor.buttonColorDarkSecond),
-      textStyle: const TextStyle(
+      backgroundColor: AppColors.blackOnly,
+      side: const BorderSide(color: AppColors.whiteOnly,),
+      textStyle:  TextStyle(
         color: AppColors.whiteOnly,
       ),
       shape: const RoundedRectangleBorder(
-        side: BorderSide(color: ButtonColor.buttonColorDarkSecond, width: 0),
+        side: BorderSide(color: AppColors.whiteOnly, width: 0),
       ),
+      shadowColor: AppColors.whiteOnly,
     ),
   ],
 );

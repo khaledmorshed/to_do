@@ -4,7 +4,7 @@ class PagingController<T>{
   List<T> itemList = [];
   int pageNumber = AppValues.defaultPageNumber;
   bool isLoadingPage = false;
-  bool endOfList = false;
+  static bool endOfList = false;
   bool submitButtonLoading = false;
 
   initRefresh(){
@@ -16,6 +16,7 @@ class PagingController<T>{
   }
 
   bool canLoadNextPage(){
+    print("isLoadingPage..$isLoadingPage...endOfList..$endOfList...${!isLoadingPage && !endOfList}");
     return !isLoadingPage && !endOfList;
   }
 

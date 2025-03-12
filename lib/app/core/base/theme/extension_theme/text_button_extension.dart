@@ -38,7 +38,7 @@ final textButtonThemeLightExtension =  TextButtonThemeExtend(
         backgroundColor: ButtonColor.buttonColorLightFirst,
         side: const BorderSide(color: ButtonColor.buttonColorLightFirst),
         textStyle: const TextStyle(
-          color: AppColors.whiteOnly,
+          color: AppColors.appPrimaryColorLight,
         ),
         shape: const RoundedRectangleBorder(
           side: BorderSide(color: ButtonColor.buttonColorLightFirst, width: 0),
@@ -49,7 +49,7 @@ final textButtonThemeLightExtension =  TextButtonThemeExtend(
         backgroundColor: ButtonColor.buttonColorLightSecond,
         side: const BorderSide(color: ButtonColor.buttonColorLightSecond),
         textStyle: const TextStyle(
-          color: AppColors.whiteOnly,
+          color: AppColors.appSecondaryColorLight,
         ),
         shape: const RoundedRectangleBorder(
           side: BorderSide(color: ButtonColor.buttonColorLightSecond, width: 0),

@@ -6,8 +6,8 @@ abstract class ButtonColor{
 //button background color light
   static const Color buttonColorLightPrimary = AppColors.appPrimaryColorLight;
   static const Color buttonColorLightSecondary = AppColors.appSecondaryColorLight;
-  static const Color buttonColorLightFirst = AppColors.appPrimaryColorFirstLight;
-  static const Color buttonColorLightSecond = AppColors.appSecondaryColorFirstLigth;
+  static const Color buttonColorLightFirst = AppColors.appPrimaryColorThirdLight;
+  static const Color buttonColorLightSecond = AppColors.appSecondaryColorThirdLight;
 //button background color dark
   static const Color buttonColorDarkPrimary = AppColors.appPrimaryColorDark;
   static const Color buttonColorDarkSecondary = AppColors.appSecondaryColorDark;
