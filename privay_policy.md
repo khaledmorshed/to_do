@@ -75,7 +75,7 @@ We will retain your personal information for as long as your account is active o
 
 ### Children's Privacy
 
-The App is not intended for children under the age of [Specify the relevant age, e.g., 13]. We do not knowingly collect personal information from children under this age. If you believe that we have inadvertently collected personal information from a child under the specified age, please contact us immediately, and we will take steps to delete the information.   
+The App is not intended for children under the age of 6. We do not knowingly collect personal information from children under this age. If you believe that we have inadvertently collected personal information from a child under the specified age, please contact us immediately, and we will take steps to delete the information.   
 
 ### Changes to This Privacy Policy
 
