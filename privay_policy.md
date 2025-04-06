@@ -6,7 +6,7 @@ This Privacy Policy describes how Tyro Solutions collects, uses, and shares your
 
 By using the App, you consent to the data practices described in this policy. Please read this Privacy Policy carefully.
 
-### Information We Collect
+### 1. Information We Collect
 
 We collect the following types of information from you:
 
@@ -27,7 +27,8 @@ Usage Data: We collect information about how you use the App, such as the featur
 Location Data (Optional): With your explicit consent, we may collect your device's precise or approximate location to provide location-based features, such as finding other users nearby or suggesting local events. You can control the collection of location data through your device settings.
 ### Log Data: 
 Our servers automatically record certain information when you use the App, including your IP address, browser type, referring/exit pages, and timestamps.
-2. How We Use Your Information
+
+### 2. How We Use Your Information
 
 We use the information we collect for the following purposes:
 
@@ -40,7 +41,8 @@ To Improve the App: To analyze usage patterns, identify areas for improvement, a
 To Ensure Security and Prevent Fraud: To monitor and protect the App from unauthorized access, misuse, and other security threats.
 To Comply with Legal Obligations: To respond to legal requests and comply with applicable laws and regulations.
 For Research and Analytics: To conduct research and analyze user behavior to understand and improve the user community.
-3. How We Share Your Information
+
+### 3. How We Share Your Information
 
 We may share your information with the following categories of recipients:
 
