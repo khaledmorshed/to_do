@@ -21,7 +21,9 @@ Information Collected Automatically:
 
 ### Device Information:
  We may collect information about your device, including its operating system, device model, unique device identifiers (such as Android Advertising ID), and mobile network information.
+
 Usage Data: We collect information about how you use the App, such as the features you use, the pages you view, the time and date of your access, and other usage statistics.
+
 Location Data (Optional): With your explicit consent, we may collect your device's precise or approximate location to provide location-based features, such as finding other users nearby or suggesting local events. You can control the collection of location data through your device settings.
 ### Log Data: 
 Our servers automatically record certain information when you use the App, including your IP address, browser type, referring/exit pages, and timestamps.
