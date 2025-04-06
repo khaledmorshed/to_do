@@ -13,7 +13,7 @@ We collect the following types of information from you:
 ### Information You Provide Directly
 
 Profile Information:
-When you create an account, you may provide information such as your name, graduation year, major/department, email address, phone number (optional), current profession, company, location, and any other information you choose to include in your profile.
+When you create an account, you may provide information such as your name, graduation year, major/department, email address, phone number, current profession, company, location, and any other information you choose to include in your profile.
 ### Content You Share
 This includes posts, comments, messages, photos, and other content you submit or share through the App.
 Communication Data: When you contact us for support or feedback, we may collect your name, email address, and the content of your communication.
