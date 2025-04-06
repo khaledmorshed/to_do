@@ -2,7 +2,7 @@ Privacy Policy for Linker
 -----------------------
 Last Updated: April 6, 2025
 
-This Privacy Policy describes how Tyro Solutions ("we," "us," or "our") collects, uses, and shares your personal information when you use our application Linker (the "App"). This App is available on the Google Play Store.
+This Privacy Policy describes how Tyro Solutions collects, uses, and shares your personal information when you use our application Linker (the "App"). This App is available on the Google Play Store.
 
 By using the App, you consent to the data practices described in this policy. Please read this Privacy Policy carefully.
 
