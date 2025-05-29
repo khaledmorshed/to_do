@@ -1,8 +1,8 @@
-Privacy Policy for Linker
+Privacy Policy for Tagora
 -----------------------
 Last Updated: April 6, 2025
 
-This Privacy Policy describes how Tyro Solutions collects, uses, and shares your personal information when you use our application Linker (the "App"). This App is available on the Google Play Store.
+This Privacy Policy describes how Tyro Solutions collects, uses, and shares your personal information when you use our application Tagora (the "App"). This App is available on the Google Play Store.
 
 By using the App, you consent to the data practices described in this policy. Please read this Privacy Policy carefully.
 
@@ -88,4 +88,4 @@ If you have any questions or concerns about this Privacy Policy or our data prac
 Tyro Solutions<br>
 tyrosolution@gmail.com
 
-By using the Linker App, you acknowledge that you have read and understood this Privacy Policy.
+By using the Tagora App, you acknowledge that you have read and understood this Privacy Policy.
