@@ -1,6 +1,6 @@
-## Linker Child Safety Standards
+## Tagora Child Safety Standards
 
-Linker strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
+Tagora strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
 
 We are committed to:
 - Promptly removing and reporting any such content.
