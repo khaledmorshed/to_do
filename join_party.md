@@ -63,11 +63,9 @@ Business Transfers: In the event of a merger, acquisition, or sale, your informa
 
 Access and Review: View information held about you within the App.
 
-Correction: Request updates or corrections to your profile information.
+Deletion: There is no individual profile. So deletion process does not need.
 
-Deletion: Request deletion of your account and associated data (subject to legal or business requirements).
-
-Privacy Settings: Control visibility of your profile and information.
+Privacy Settings: There is no individual profile..
 
 Location Data: Enable or disable location tracking through device settings.
 
