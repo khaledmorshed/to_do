@@ -1,4 +1,4 @@
-##মমির্জা আব্বাস উদ্দিন আহমেদ Child Safety Standards
+## মির্জা আব্বাস উদ্দিন আহমেদ Child Safety Standards
 
 মির্জা আব্বাস উদ্দিন আহমেদ strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
 
