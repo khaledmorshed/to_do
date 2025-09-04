@@ -1,6 +1,6 @@
-##মির্জা আব্বাস উদ্দিন আহমেদ Child Safety Standards
+##মমির্জা আব্বাস উদ্দিন আহমেদ Child Safety Standards
 
-ির্জা আব্বাস উদ্দিন আহমেদ strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
+মির্জা আব্বাস উদ্দিন আহমেদ strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
 
 We are committed to:
 - Promptly removing and reporting any such content.
