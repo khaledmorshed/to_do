@@ -1,6 +1,6 @@
-## Firewood LGP Child Safety Standards
+## Firewood LPG Child Safety Standards
 
-Firewood LGP strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
+Firewood LPG strictly prohibits any content or behavior that promotes or engages in child sexual abuse or exploitation.
 
 We are committed to:
 - Promptly removing and reporting any such content.
