@@ -3,7 +3,7 @@
 **Last Updated:** July 29, 2026  
 **Effective Date:** July 29, 2026  
 
-This Privacy Policy explains how **Tyro Solutions** ("we", "us", or "our") collects, uses, discloses, and protects your information when you use the **Run Events** mobile application ("App").
+This Privacy Policy explains how **Faridul Hassan Bafi** ("we", "us", or "our", developer and publisher of Run Events) collects, uses, discloses, and protects your information when you use the **Run Events** mobile application ("App").
 
 By downloading, accessing, or using the App, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree with this policy, please do not use the App.
 
@@ -105,7 +105,7 @@ Once confirmed, your account is immediately deactivated and your personal data w
 
 If you are unable to access the App or have uninstalled it, you can request full deletion of your account and personal data by emailing our privacy team:
 
-* **Email:** [tyrosolution@gmail.com](mailto:tyrosolution@gmail.com)
+* **Email:** [faridulhassanb@gmail.com](mailto:faridulhassanb@gmail.com)
 * **Subject:** `Account Deletion Request - Run Events`
 * Please include your registered phone number or email address to enable us to locate and verify your account. Deletion requests submitted via email are verified and processed within **30 days**.
 
@@ -176,7 +176,7 @@ The App is not directed to or intended for use by children under the age of 13 (
 
 We do not knowingly solicit, collect, or process personal information from children under 13. If an event offers a children's or junior race category, registration must be completed by a parent or legal guardian on the child's behalf. If we discover that we have inadvertently collected personal information directly from a child under 13 without verifiable parental consent, we will take prompt steps to delete that information from our servers.
 
-If you believe that a child has provided us with personal information without parental consent, please contact us immediately at [tyrosolution@gmail.com](mailto:tyrosolution@gmail.com).
+If you believe that a child has provided us with personal information without parental consent, please contact us immediately at [faridulhassanb@gmail.com](mailto:faridulhassanb@gmail.com).
 
 ---
 
@@ -202,7 +202,7 @@ We encourage you to review this Privacy Policy periodically to stay informed abo
 
 If you have questions, concerns, feedback, or requests regarding this Privacy Policy or our data handling practices, please reach out to us:
 
-**Tyro Solutions**  
+**Faridul Hassan Bafi**  
 📍 Developer & Publisher of Run Events  
-📧 **Email:** [tyrosolution@gmail.com](mailto:tyrosolution@gmail.com)  
-🌐 **Website / Support:** [tyrosolution@gmail.com](mailto:tyrosolution@gmail.com)  
+📧 **Email:** [faridulhassanb@gmail.com](mailto:faridulhassanb@gmail.com)  
+🌐 **Support:** [faridulhassanb@gmail.com](mailto:faridulhassanb@gmail.com)  
